@@ -46,7 +46,7 @@ css+='</style>';
 <script>
     // 播放器基本设置，下面的地址要改（line49），不然显示不出弹幕
     var playlink ="<?php echo($_REQUEST['myurl']);?>",urlpar ='DiandianTV';
-    var dmapi = 'https://player.xiwangly.top/v3/',vodurl = '<?php echo($_REQUEST['url']);?>',vodid="<?php echo($_REQUEST['name']);?>",vodsid="<?php echo($_REQUEST['sid']);?>",vodpic="<?php echo($_REQUEST['pic']);?>",vodname="<?php echo($_REQUEST['name']);?>",next = "<?php echo($_REQUEST['next']);?>",ym="http://v.8e.gs";
+    var dmapi = '<?php $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';echo($http_type.$_SERVER['SERVER_NAME'].'/v3/');?>',vodurl = '<?php echo($_REQUEST['url']);?>',vodid="<?php echo($_REQUEST['name']);?>",vodsid="<?php echo($_REQUEST['sid']);?>",vodpic="<?php echo($_REQUEST['pic']);?>",vodname="<?php echo($_REQUEST['name']);?>",next = "<?php echo($_REQUEST['next']);?>",ym="http://v.8e.gs";
     var pic="<https://ae01.alicdn.com/kf/H222eb1400c714319a40e62c742cc834bv.jpg";
     var playnext = next ;
     var user = '<?php echo($_REQUEST['user']);?>',group = "<?php echo($_REQUEST['group']);?>",color = '#00a1d6',logo ='logo.png',autoplay = false;
