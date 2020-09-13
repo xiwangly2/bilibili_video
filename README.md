@@ -2,7 +2,7 @@
 
 仿bilibili的播放器
 
-原作者：<a href="https://github.com/zdyzm">@jdyzm</a> TA的主站：<a href="http://jdyzm.cn/">jdyzm.cn</a>
+原作者：<a href="https://github.com/jdyzm">@jdyzm</a> TA的主站：<a href="http://jdyzm.cn/">jdyzm.cn</a>
 
 xiwangly修改，原作者的信息仍被保留，小改了一些东西，……
 
