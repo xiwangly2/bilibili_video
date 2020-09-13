@@ -44,9 +44,9 @@ css+='</style>';
 <div id="player"></div>
 <div class="tj"><script type="text/javascript" src="js/z_stat.js"></script></div>
 <script>
-    // 播放器基本设置
+    // 播放器基本设置，下面的地址要改（line49），不然显示不出弹幕
     var playlink ="<?php echo($_REQUEST['myurl']);?>",urlpar ='DiandianTV';
-    var dmapi = '<?php echo('http://'.$_SERVER['SERVER_NAME'].'xiwangly.top/v3/');?>',vodurl = '<?php echo($_REQUEST['url']);?>',vodid="<?php echo($_REQUEST['name']);?>",vodsid="<?php echo($_REQUEST['sid']);?>",vodpic="<?php echo($_REQUEST['pic']);?>",vodname="<?php echo($_REQUEST['name']);?>",next = "<?php echo($_REQUEST['next']);?>",ym="http://v.8e.gs";
+    var dmapi = 'https://player.xiwangly.top/v3/',vodurl = '<?php echo($_REQUEST['url']);?>',vodid="<?php echo($_REQUEST['name']);?>",vodsid="<?php echo($_REQUEST['sid']);?>",vodpic="<?php echo($_REQUEST['pic']);?>",vodname="<?php echo($_REQUEST['name']);?>",next = "<?php echo($_REQUEST['next']);?>",ym="http://v.8e.gs";
     var pic="<https://ae01.alicdn.com/kf/H222eb1400c714319a40e62c742cc834bv.jpg";
     var playnext = next ;
     var user = '<?php echo($_REQUEST['user']);?>',group = "<?php echo($_REQUEST['group']);?>",color = '#00a1d6',logo ='logo.png',autoplay = false;
@@ -59,7 +59,7 @@ css+='</style>';
     if(playlink!=''){ }else {var diyvodid = 1;};
     diyid = md5(vodurl),diysid = 0;
     //弹幕礼仪链接
-    var dmrule = "https://$_SERVER[\"SERVER_NAME\"]/"
+    var dmrule = '<?php echo('http://'.$_SERVER['SERVER_NAME'].'/');?>'
     //暂停广告
     var pause_ad_html = '<div id="player_pause" style="position:absolute;z-index:209910539;top:50%;left:50%;border-radius:5px;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%);max-width:80%;max-height:80%;"><div style=" color: #f4f4f4;position: absolute;font-size: 14px;background-color: hsla(0, 0%, 0%, 0.42);padding: 2px 4px;margin: 4px;border-radius: 3px;right: 0;">广告</div><iframe src="http://v.8e.gs/label/ad_2/" frameborder="0" width="100%" height="180" style="background-color: #f4f4f4;width: 320px;border-radius: 5px;"></iframe></div>';
     //播放结束
