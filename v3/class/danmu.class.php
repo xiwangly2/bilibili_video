@@ -36,7 +36,7 @@ class danmu {
             $arr[$k][] = (string)$v['cid'];  //现在是弹幕id，以后可能是发送者id了
             $arr[$k][] = (string)$v['text'];  //弹幕文本
             // $arr[$k][] = (int)$v['time'];  //弹幕系统时间
-            $arr[$k][] = $date = date('H:m:s',$v['time']);  //弹幕系统时间
+            $arr[$k][] = $date = date('H:i:s',$v['time']);  //弹幕系统时间
         }
         
         return $arr;

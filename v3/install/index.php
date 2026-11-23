@@ -80,13 +80,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
     if ($_POST['dbtype'] == 3 or $_POST['dbtype'] == 4){
-        zq_sqlite($type{$_POST['dbtype']-1});
+        zq_sqlite($type[(int)$_POST['dbtype']-1]);
         session_destroy();
         die("安装成功");
     }
     
     check();
-    zq_mysql($type{$_POST['dbtype']-1});
+    zq_mysql($type[(int)$_POST['dbtype']-1]);
     session_destroy();
     die("安装成功");
 
@@ -167,13 +167,14 @@ function zq_sqlite($type){
 }
 
 function check(){
-    if ($_POST['dbtype'] === 1 or $_POST['dbtype'] === 2){
+    $dbtype = (int)$_POST['dbtype'];
+    if ($dbtype === 1 or $dbtype === 2){
         if (empty($_POST['host'])) die("参数错误"); 
         if (empty($_POST['user'])) die("参数错误");
         if (empty($_POST['pwd'])) die("参数错误");
         if (empty($_POST['dbname'])) die("参数错误");
     }
-    if ($_POST['dbtype'] > 4 or $_POST['dbtype'] <= 0) die("参数错误");
+    if ($dbtype > 4 or $dbtype <= 0) die("参数错误");
 }
 ?>
 

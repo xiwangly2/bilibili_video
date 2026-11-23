@@ -47,7 +47,8 @@ class sql {
             $stmt->bindParam(':text', $data['text']);
             $stmt->bindParam(':color', $data['color']);
             $stmt->bindParam(':videotime', $data['time']);
-            @$stmt->bindParam(':time', time());
+            $now = time();
+            $stmt->bindParam(':time', $now);
             $stmt->execute();
         } catch (PDOException $e) {
             showmessage(-1,'数据库错误:'.$e->getMessage());
@@ -61,7 +62,8 @@ class sql {
             if (self::$type == 'sqlite') $query = ' OR';
             $stmt = self::$sql->prepare("INSERT{$query} IGNORE INTO danmaku_ip (ip, time) VALUES (:ip, :time)");
             $stmt->bindParam(':ip', $ip);
-            @$stmt->bindParam(':time', time());
+            $now = time();
+            $stmt->bindParam(':time', $now);
             $stmt->execute();
         } catch (PDOException $e) {
             showmessage(-1,'数据库错误:'.$e->getMessage());
