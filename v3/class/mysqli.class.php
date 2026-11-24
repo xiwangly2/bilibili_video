@@ -19,7 +19,8 @@ class sql {
     public static function 插入_弹幕($data){
         try {
             $stmt = self::$sql->prepare("INSERT IGNORE INTO danmaku_list (id, type, text, color, videotime, time) VALUES (?, ?, ?, ?, ?, ?)");
-            @$stmt->bind_param('iisidi', $data['id'], $data['type'], $data['text'], $data['color'], $data['time'],time());
+            $now = time();
+            @$stmt->bind_param('iisidi', $data['id'], $data['type'], $data['text'], $data['color'], $data['time'],$now);
             if ($stmt->execute() == false){
                 throw new Exception($stmt->error_list);
             }
@@ -33,7 +34,8 @@ class sql {
     public static function 插入_发送弹幕次数($ip){
         try {
             $stmt = self::$sql->prepare("INSERT IGNORE INTO danmaku_ip (ip, time) VALUES (?, ?)");
-            @$stmt->bind_param('si', $ip, time());
+            $now = time();
+            @$stmt->bind_param('si', $ip, $now);
             if ($stmt->execute() == false){
                 throw new Exception($stmt->error_list);
             }
